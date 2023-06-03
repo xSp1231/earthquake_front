@@ -1,3 +1,4 @@
+<!---知乎-echarts绘制中国地图-->
 <template>
   <div ref="mapContainer" class="graphmap"></div>
 </template>
