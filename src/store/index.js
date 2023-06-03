@@ -1,3 +1,4 @@
+//交互核心部分
 import {createStore} from 'vuex'
 import api from "../api";
 
