@@ -1,8 +1,8 @@
-<!---词云图->
+<!---词云图------>
 <template>
     <div ref="wordcloud" class="wordcloud">
     </div>
- </template>
+</template>
 
  <script>
  import * as echarts from 'echarts';
@@ -182,15 +182,11 @@
    }
  }
  </script>
+
  <style scoped>
  .wordcloud{
    width:100%;
    height:260px;
    margin:auto;
  }
- </style>
-
-
-<style scoped>
-
 </style>
