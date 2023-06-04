@@ -4,9 +4,14 @@
       <el-col :span="18">
         <div class="grid-content1 ep-bg-purple"/>
         <div class="first" style="display: flex; margin-top: 30px;margin-left: 10px">
-          <div style="width: 40%;height:400px;background-color: #b3b5f5">
-            <el-card style="width: 100%;height: 100%" shadow="always">
-              播报图
+          <div class="broadcast" style="width: 40%;height:470px;background-color: #b3b5f5">
+            <el-card style="width: 100%;height: 35%" shadow="always">
+              <broadcast></broadcast>
+            </el-card>
+            <!--饼图 各省地震次数前八-->
+            <el-card style="width: 100%;height: 65%" shadow="always">
+              <h3 style="margin-top: 0px;margin-bottom: 0px">dsadad</h3>
+
             </el-card>
           </div>
           <div class="graph" style="width: 60%;height:470px; margin-left: 20px; ">
@@ -58,12 +63,13 @@
 import wordcloud from "./graph/wordcloud.vue";
 import barline from "./graph/Barline.vue";
 import mapgraph from "./graph/Mapgraph.vue"
-
+import broadcast from "./graph/Broadcast.vue";
 export default {
   components:{
     wordcloud,
     barline,
-    mapgraph
+    mapgraph,
+    broadcast
   },
   data() {
     return {
