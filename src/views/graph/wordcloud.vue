@@ -1,4 +1,4 @@
-<!---词云图------>
+<!---词云图---coded by another computer--->
 <template>
     <div ref="wordcloud" class="wordcloud">
     </div>
