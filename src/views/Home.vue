@@ -10,8 +10,7 @@
             </el-card>
             <!--饼图 各省地震次数前八-->
             <el-card style="width: 100%;height: 65%" shadow="always">
-              <h3 style="margin-top: 0px;margin-bottom: 0px">dsadad</h3>
-
+              <h3 style="margin-top: 0px;margin-bottom: 0px">饼图</h3>
             </el-card>
           </div>
           <div class="graph" style="width: 60%;height:470px; margin-left: 20px; ">
