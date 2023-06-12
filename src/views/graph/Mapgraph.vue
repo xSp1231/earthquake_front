@@ -6,6 +6,8 @@
 <script>
 import * as echarts from "echarts";
 import china from '../../data/chinamap.json'
+import api from "../../api/index.js";
+import {mapMutations} from "vuex";
 
 export default {
   name: "mapgraph",
@@ -14,6 +16,9 @@ export default {
     this.drawmap()
   },
   methods: {
+    ...mapMutations([
+      'getdatabyarea'
+    ]),
     drawmap() {
       this.myChart = echarts.init(this.$refs.mapContainer);
       echarts.registerMap('china', china);
@@ -52,115 +57,115 @@ export default {
             map: 'china', // 引入地图数据
             data: [
               {
-                name: "北京市",
+                name: "北京",
                 value: 20,
               },
               {
-                name: "天津市",
+                name: "天津",
                 value: 12,
               },
               {
-                name: "上海市",
+                name: "上海",
                 value: 1,
               },
               {
-                name: "重庆市",
+                name: "重庆",
                 value: 125,
               },
               {
-                name: "河北省",
+                name: "河北",
                 value: 258,
               },
               {
-                name: "河南省",
+                name: "河南",
                 value: 123,
               },
               {
-                name: "云南省",
+                name: "云南",
                 value: 3038,
               },
               {
-                name: "辽宁省",
+                name: "辽宁",
                 value: 471,
               },
               {
-                name: "黑龙江省",
+                name: "黑龙江",
                 value: 138,
               },
               {
-                name: "湖南省",
+                name: "湖南",
                 value: 26,
               },
               {
-                name: "安徽省",
+                name: "安徽",
                 value: 93,
               },
               {
-                name: "山东省",
+                name: "山东",
                 value: 319,
               },
               {
-                name: "新疆维吾尔自治区",
+                name: "新疆",
                 value: 7779,
               },
               {
-                name: "江苏省",
+                name: "江苏",
                 value: 94,
               },
               {
-                name: "浙江省",
+                name: "浙江",
                 value: 90,
               },
               {
-                name: "江西省",
+                name: "江西",
                 value: 47,
               },
               {
-                name: "湖北省",
+                name: "湖北",
                 value: 106,
               },
               {
-                name: "广西壮族自治区",
+                name: "广西",
                 value: 127,
               },
               {
-                name: "甘肃省",
+                name: "甘肃",
                 value: 597,
               },
               {
-                name: "山西省",
+                name: "山西",
                 value: 244,
               },
               {
-                name: "内蒙古自治区",
+                name: "内蒙古",
                 value: 852,
               },
               {
-                name: "陕西省",
+                name: "陕西",
                 value: 125,
               },
               {
-                name: "吉林省",
+                name: "吉林",
                 value: 9,
               },
               {
-                name: "福建省",
+                name: "福建",
                 value: 84,
               },
               {
-                name: "贵州省",
+                name: "贵州",
                 value: 145,
               },
               {
-                name: "广东省",
+                name: "广东",
                 value: 225,
               },
               {
-                name: "青海省",
+                name: "青海",
                 value: 2156,
               },
               {
-                name: "西藏自治区",
+                name: "西藏",
                 value: 3494,
               },
               {
@@ -168,23 +173,23 @@ export default {
                 value: 4770,
               },
               {
-                name: "宁夏回族自治区",
+                name: "宁夏",
                 value: 142,
               },
               {
-                name: "海南省",
+                name: "海南",
                 value: 16,
               },
               {
-                name: "台湾省",
+                name: "台湾",
                 value: 1526,
               },
               {
-                name: "香港特别行政区",
+                name: "香港",
                 value: 0,
               },
               {
-                name: "澳门特别行政区",
+                name: "澳门",
                 value: 0,
               },
             ],
@@ -244,9 +249,9 @@ export default {
         },
       })
       this.myChart.on('click', (params) => {
-       console.log("显示的内容为",params.data.name)
+       console.log("点击的地区为",params.data.name)
+        this.getdatabyarea(params.data.name)
       });
-
     }
   }
 };

@@ -4,16 +4,16 @@
       <el-col :span="18">
         <div class="grid-content1 ep-bg-purple"/>
         <div class="first" style="display: flex; margin-top: 30px;margin-left: 10px">
-          <div class="broadcast" style="width: 40%;height:470px;background-color: #b3b5f5">
-            <el-card style="width: 100%;height: 35%" shadow="always">
+          <div class="broadcast" style="width: 40%;height:530px;background-color: #b3b5f5">
+            <el-card style="width: 100%;height: 40%" shadow="always">
               <broadcast></broadcast>
             </el-card>
             <!--饼图 各省地震次数前八-->
-            <el-card style="width: 100%;height: 65%" shadow="always">
-              <h3 style="margin-top: 0px;margin-bottom: 0px">饼图添加</h3>
+            <el-card style="width: 100%;height: 60%" shadow="always">
+              <piegraph></piegraph>
             </el-card>
           </div>
-          <div class="graph" style="width: 60%;height:470px; margin-left: 20px; ">
+          <div class="graph" style="width: 60%;height:500px; margin-left: 20px; ">
             <el-card style="width: 100%;height: 100%" shadow="always">
               <mapgraph></mapgraph>
             </el-card>
@@ -36,6 +36,8 @@
         </div>
       </el-col>
     </el-row>
+
+
     <!---下半部分-->
     <el-row :gutter="20">
       <el-col :span="12">
@@ -63,12 +65,14 @@ import wordcloud from "./graph/wordcloud.vue";
 import barline from "./graph/Barline.vue";
 import mapgraph from "./graph/Mapgraph.vue"
 import broadcast from "./graph/Broadcast.vue";
+import piegraph from "./graph/Piegraph.vue";
 export default {
   components:{
     wordcloud,
     barline,
     mapgraph,
-    broadcast
+    broadcast,
+    piegraph
   },
   data() {
     return {

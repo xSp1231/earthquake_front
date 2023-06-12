@@ -6,7 +6,48 @@ const store = createStore({
     state: {
         //每一年的地震次数
         provincename:"null",
-        numdata: [0, 1, 1, 2, 2, 3, 3, 4, 4, 9]
+        numdata: [0, 1, 1, 2, 2, 3, 3, 4, 4, 9],
+        provinceintro:{ //设置默认数据
+                "injure": 691995,
+                "death": 343,
+                "total": 692338,
+                "intro": "位于中国西南地区，地处川西高原和四川盆地，地震活动较多，属于川西地震带",
+                "piedata": [
+                    {
+                        "value": 460,
+                        "name": "芦山"
+                    },
+                    {
+                        "value": 388,
+                        "name": "珙县"
+                    },
+                    {
+                        "value": 314,
+                        "name": "长宁"
+                    },
+                    {
+                        "value": 234,
+                        "name": "威远"
+                    },
+                    {
+                        "value": 204,
+                        "name": "九寨沟"
+                    },
+                    {
+                        "value": 193,
+                        "name": "木里"
+                    },
+                    {
+                        "value": 185,
+                        "name": "青川"
+                    },
+                    {
+                        "value": 181,
+                        "name": "汶川"
+                    }
+                ]
+            }
+
     },
     mutations: {
         getdatabyprovince(state, province) {
@@ -23,6 +64,23 @@ const store = createStore({
                 console.log(error)
             })
         },
+        getdatabyarea(state, area) {
+            api.get('getprovinceintro/',{
+                params: {
+                    area: area
+                }
+            }).then(response => {
+                console.log("获得的地区数据是 is",response.data.areadata)
+                state.provinceintro=response.data.areadata
+                console.log("state数据 ",state.provinceintro)
+            }).catch(error => {
+                console.log(error)
+            })
+        },
+
+
+
+
     },
 })
 export default store
