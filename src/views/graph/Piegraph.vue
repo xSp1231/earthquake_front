@@ -11,14 +11,16 @@ export default {
   name: "Piegraph",
   data(){
     return{
-
     } ;
   },
   computed: {
     ...mapState(['provinceintro']),
     piedata() { //各个身份每一年的地震次数
       return this.provinceintro['piedata']
-    }
+    },
+    areaname() { //各个身份每一年的地震次数
+      return "—— "+this.provinceintro['areaname']
+    },
   },
   mounted(){
     this.drawpie()
@@ -38,7 +40,14 @@ export default {
       this.myChart = echarts.init(this.$refs.pie);
       this.myChart.setOption( {
         title: {
-          text: '各省份地震前八地区(近十年)',
+          text: '各省份地震次数前八地区(近十年)',
+          subtext:this.areaname,
+          subtextStyle:{
+            color:'#af1c1c',
+            //字体大小
+            fontSize:15,
+            fontWeight:100
+          },
           left:"center",
           textStyle:{
             color:'#3d3c3c',
@@ -64,14 +73,16 @@ export default {
             name: '地区地震次数',
             type: 'pie',
             //radius:'60%',
-            radius: [50,80],
+            radius: [30,80],
             center: ['40%', '50%'],//设置饼图位置
+            roseType: 'area',
             data:this.piedata,
             emphasis: {
               itemStyle: {
                 shadowBlur: 10,
                 shadowOffsetX: 0,
-                shadowColor: 'rgba(0, 0, 0, 0.5)'
+                shadowColor: 'rgba(0, 0, 0, 0.5)',
+                borderRadius: 10,
               }
             }
           }
@@ -80,6 +91,9 @@ export default {
     },
     updatepiegraph() {
       this.myChart.setOption({
+        title:{
+          subtext:this.areaname
+        },
         series: [{
           data: this.piedata // 使用新数据更新图表 也可以使用 this.numdata
         }],

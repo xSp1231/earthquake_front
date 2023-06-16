@@ -45,7 +45,6 @@
           </el-icon>
         </h4>
         <h4 style=" position:relative;margin-top: 10px;width: 200px;left: 55%;color: #949393">{{ newTime }}</h4>
-
       </div>
       <div class="syslogo" style="width: 8% ;">
         <span class="el-dropdown-link">
@@ -59,6 +58,9 @@
 
 <script>
 export default {
+
+  components(){
+    },
   data() {
     return {
       newTime: "",

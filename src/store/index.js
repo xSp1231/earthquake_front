@@ -45,7 +45,8 @@ const store = createStore({
                         "value": 181,
                         "name": "汶川"
                     }
-                ]
+                ],
+                "img":"pictures/default.jpg"
             }
 
     },

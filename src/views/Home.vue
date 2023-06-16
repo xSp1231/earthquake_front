@@ -4,8 +4,8 @@
       <el-col :span="18">
         <div class="grid-content1 ep-bg-purple"/>
         <div class="first" style="display: flex; margin-top: 30px;margin-left: 10px">
-          <div class="broadcast" style="width: 40%;height:530px;background-color: #b3b5f5">
-            <el-card style="width: 100%;height: 40%" shadow="always">
+          <div class="broadcast" style="width: 40%;height:530px;">
+            <el-card style="width: 100%;height: 40%;margin-bottom: 9px" shadow="always">
               <broadcast></broadcast>
             </el-card>
             <!--饼图 各省地震次数前八-->

@@ -1,5 +1,20 @@
 <!---播报图-->
 <template class="static">
+  <el-backtop :bottom="100" >
+    <div
+        style="
+        height: 100%;
+        width: 100%;
+        background-color: var(--el-bg-color-overlay);
+        box-shadow: var(--el-box-shadow-lighter);
+        text-align: center;
+        line-height: 40px;
+        color: #1989fa;
+      "
+    >
+      UP
+    </div>
+  </el-backtop>
   <el-row :gutter="2">
     <el-col :span="8">
       <div class="statistic-card">
@@ -66,9 +81,9 @@
   </el-row>
   <el-row :gutter="2" style="margin-top: 0px">
     <el-col :span="24">
-        <div class="areaintro" style=" display: flex;width: 100%;height: 125px;background-color: #f6f0f0;border-radius: 6px;">
+        <div class="areaintro" style=" display: flex;width: 100%;height: 128px;border-radius: 6px;">
 
-          <div class="image-container"></div>
+          <div class="image-container" v-bind:style="{ 'background-image': 'url(' + image_path+ ')' }"  ></div>
 
           <div class="intro">
             <h6 style="margin-bottom: 0px;margin-top: 0px;color: #6c6b6b;font-size:15px">地区地理简介:</h6>
@@ -90,8 +105,16 @@ import {
 import {mapState} from "vuex";
 export default {
   name: "Broadcast",
+  data(){
+    return{
+     // image_path:"http://127.0.0.1:8000/media/pictures/default.jpg",
+    }
+  },
   computed: { //cpmputed也可以实现监听数据  但是为什么要使用watch呢 因为可以在watch里面使用函数
     ...mapState(['provinceintro']),
+    image_path(){
+      return "http://127.0.0.1:8000/media/"+this.provinceintro['img']
+    },
     injurenum() { //各个身份每一年的地震次数
       return this.provinceintro['injure']
     },
@@ -106,18 +129,23 @@ export default {
     },
   },
 }
+//"../../assets/地震带earthquake.jpg"
 </script>
 
 <style scoped>
+
+
 .image-container{
-  width:40%;
-  background: url("../../assets/地震带earthquake.jpg") center no-repeat;
+  border-radius: 10px;
+  width:50%;
   background-size:cover;
+  background-position: center;
 }
 
 .intro {
-  width: 60%;
-  background-color: #efeded;
+  margin-left: 8px;
+  width: 50%;
+  background-color: #e3dddc;
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0px 0px 10px rgba(72, 53, 53, 0.1);
@@ -143,11 +171,6 @@ export default {
 .intro p {
   margin: 0;
 }
-
-
-
-
-
 
 :global(h2#card-usage ~ .example .example-showcase) {
   background-color: var(--el-fill-color) !important;
