@@ -67,7 +67,16 @@ export default {
           orient: 'vertical',
           itemHeight: 15,
         },
-       // color: ['#9cd5a0', '#afeae1', '#7fb5d3', '#37aede', '#f9c956', '#75bedc'],
+        color: [
+            "#5c6b98",
+          "rgba(65,138,241,0.34)",
+      "#11a4af",
+      "#9fe1c7",
+      "#cccdd0",
+      "#942020",
+      "rgba(239,129,95,0.8)",
+      "#af8dea",
+        ],
         series: [
           {
             name: '地区地震次数',

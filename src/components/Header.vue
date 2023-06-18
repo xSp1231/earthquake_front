@@ -46,10 +46,10 @@
         </h4>
         <h4 style=" position:relative;margin-top: 10px;width: 200px;left: 55%;color: #949393">{{ newTime }}</h4>
       </div>
-      <div class="syslogo" style="width: 8% ;">
-        <span class="el-dropdown-link">
-          <img class="picture" src="../assets/地震带earthquake.jpg"><!--引入图片--->
-        </span>
+      <div class="syslogo" style="width: 8% ;display: flex">
+        <div><el-icon  @click="fullScreen" size="25px" style="margin-top: 40%; color: #b3b3b4" ><Rank /></el-icon></div>
+        <div><img class="picture" src="../assets/地震带earthquake.jpg"></div><!--引入图片--->
+
       </div>
     </div>
   </div>
@@ -57,12 +57,14 @@
 </template>
 
 <script>
+import screenfull from 'screenfull'
 export default {
 
   components(){
     },
   data() {
-    return {
+    return{
+      isFullscreen: false,
       newTime: "",
       activeIndex: '1',
       a: [],
@@ -115,6 +117,19 @@ export default {
     }
   },
   methods: {
+    fullScreen() {
+      // if (screenfull.isEnabled && !screenfull.isFullscreen) {
+      //   screenfull.request();
+      // }
+      //screenfull.isEnabled  此方法返回布尔值，判断当前能不能进入全屏
+      if (!screenfull.isEnabled) {
+        return false
+      }
+      //screenfull.toggle 此方法是执行全屏化操作。如果已是全屏状态，则退出全屏
+
+      screenfull.toggle()
+
+    },
     clickmenu(item) {
       console.log("点击的item is ", item)
       if (item.path != null) {

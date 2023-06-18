@@ -3,7 +3,7 @@
     <el-row :gutter="10">
       <el-col :span="18">
         <div class="grid-content1 ep-bg-purple"/>
-        <div class="first" style="display: flex; margin-top: 30px;margin-left: 10px">
+        <div class="first" style="display: flex; margin-top: 0px;margin-left: 10px">
           <div class="broadcast" style="width: 40%;height:530px;">
             <el-card style="width: 100%;height: 40%;margin-bottom: 9px" shadow="always">
               <broadcast></broadcast>
