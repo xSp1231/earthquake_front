@@ -52,7 +52,7 @@
         <div class="grid-content2 ep-bg-purple"/>
         <div style="width: 100%;height:300px;">
           <el-card style="width: 100%;height: 100%">
-            柱状图
+            <magnitude-bar></magnitude-bar>
           </el-card>
         </div>
       </el-col>
@@ -66,13 +66,15 @@ import barline from "./graph/Barline.vue";
 import mapgraph from "./graph/Mapgraph.vue"
 import broadcast from "./graph/Broadcast.vue";
 import piegraph from "./graph/Piegraph.vue";
+import magnitudeBar from "./graph/MagnitudeBar.vue";
 export default {
   components:{
     wordcloud,
     barline,
     mapgraph,
     broadcast,
-    piegraph
+    piegraph,
+    magnitudeBar
   },
   data() {
     return {

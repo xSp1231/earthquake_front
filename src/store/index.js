@@ -47,8 +47,7 @@ const store = createStore({
                     }
                 ],
                 "img":"pictures/default.jpg"
-            }
-
+            },
     },
     mutations: {
         getdatabyprovince(state, province) {
