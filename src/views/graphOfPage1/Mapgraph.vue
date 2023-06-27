@@ -24,7 +24,7 @@ export default {
       echarts.registerMap('china', china);
       this.myChart.setOption({
         title: {
-          text: '地震发生点聚类图（2013-2022）',
+          text: '地震发生次数地区聚类图（2013-2022）',
           subtext: '数据来源-国家地震数据中心',
         },
         tooltip: {

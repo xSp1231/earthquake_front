@@ -44,7 +44,7 @@
         <div class="grid-content2 ep-bg-purple"/>
         <div style="width: 100%;height:300px;margin-left: 10px">
           <el-card style="width: 100%;height: 100%">
-            散点图
+            <scatter-graph></scatter-graph>
           </el-card>
         </div>
       </el-col>
@@ -61,12 +61,13 @@
 </template>
 
 <script>
-import wordcloud from "./graph/wordcloud.vue";
-import barline from "./graph/Barline.vue";
-import mapgraph from "./graph/Mapgraph.vue"
-import broadcast from "./graph/Broadcast.vue";
-import piegraph from "./graph/Piegraph.vue";
-import magnitudeBar from "./graph/MagnitudeBar.vue";
+import wordcloud from "./graphOfPage1/wordcloud.vue";
+import barline from "./graphOfPage1/Barline.vue";
+import mapgraph from "./graphOfPage1/Mapgraph.vue"
+import broadcast from "./graphOfPage1/Broadcast.vue";
+import piegraph from "./graphOfPage1/Piegraph.vue";
+import magnitudeBar from "./graphOfPage1/MagnitudeBar.vue";
+import scatterGraph from "./graphOfPage1/ScatterGraph.vue";
 export default {
   components:{
     wordcloud,
@@ -74,7 +75,8 @@ export default {
     mapgraph,
     broadcast,
     piegraph,
-    magnitudeBar
+    magnitudeBar,
+    scatterGraph
   },
   data() {
     return {
