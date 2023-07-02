@@ -29,7 +29,7 @@ export default {
       this.myChart.setOption({
 
         title: {
-          text: '震源深度-震级聚类',
+          text: '震源深度-震级聚类-- K-means',
           left: "left",
           textStyle: {
             color: '#3d3c3c',

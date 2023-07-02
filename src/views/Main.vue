@@ -4,7 +4,7 @@
       <el-header class="header" >
         <topbar></topbar>
       </el-header>
-      <el-main style="background-color: #f5f5f5">
+      <el-main style="background-color: #f5f5f5;">
         <router-view></router-view>
       </el-main>
     </el-container>
@@ -36,7 +36,7 @@ export default {
   top: 0;
   left:0;
   width: 100%;
-  height: 150%;
+  height: 100%;
 }
 .header {
   position: fixed;
