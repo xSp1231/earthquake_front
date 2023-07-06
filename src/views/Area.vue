@@ -26,21 +26,21 @@
       <el-row :gutter="15">
         <el-col :xs="6" :sm="6" :md="6" :lg="6" :xl="6">
           <div class="grid-content ep-bg-purple" style="background-color: #fcfcfc;">
-            <el-card class="box-card" style="width: 100%;height:400px"> </el-card>
-            <el-card class="box-card" style="width: 100%;height:400px;margin-top: 20px"> </el-card>
+            <el-card class="box-card1" style="width: 100%;height:400px"> </el-card>
+            <el-card class="box-card2" style="width: 100%;height:400px;margin-top: 20px"> </el-card>
           </div>
         </el-col>
 
         <el-col :xs="12" :sm="12" :md="12" :lg="12" :xl="12">
-          <div class="grid-content ep-bg-purple-light" >
-            <el-card class="box-card" style="width: 100%;height:400px"> <h3>地图</h3></el-card>
-            <el-card class="box-card" style="width: 95%;height:400px;margin-top: 20px;margin-left: 20px;"><h3>时间序列预测曲线</h3></el-card>
+          <div class="one" >
+            <el-card class="box-card3" style="width: 100%;height:400px;"><bdmap></bdmap> </el-card>
+            <el-card class="box-card4" style="width: 95%;height:400px;margin-top: 20px;margin-left: 20px;"><h3>时间序列预测曲线</h3></el-card>
           </div>
         </el-col>
 
         <el-col :xs="6" :sm="6" :md="6" :lg="6" :xl="6">
           <div class="grid-content ep-bg-purple" >
-            <el-card class="box-card" style="width: 100%;height:800px">
+            <el-card class="box-card5" style="width: 100%;height:800px">
              <h3>地区地震发生历史时间表</h3>
             </el-card>
 
@@ -60,11 +60,12 @@ import {
   Message,
   Star,
 } from '@element-plus/icons-vue'
-
+import bdmap from "./graphOfPage2/areaMap.vue";
+import {mapMutations} from "vuex";
 export default {
-  // components: {
-  //   SearchIcon: Search,
-  // },
+   components:{
+     bdmap
+   },
   data() {
     return {
       options: [
@@ -114,6 +115,9 @@ export default {
     }
   },
   methods: {
+    ...mapMutations([
+      'setLocation'
+    ]),
     find() {
       console.log("input is", this.input)
       if(this.input===""){
@@ -124,11 +128,15 @@ export default {
         });
       }
       else{
-      this.$message({
-        message: '查询成功^_^',
-        type: 'success',
-        offset: 60, // 设置偏移量为 60px 距离顶部的距离
-      });
+        this.setLocation(this.input) //之后就可以使用vuex里面的数据
+        // console.log("搜索的地点是",this.input)
+        // console.log("该地点的经纬度是")
+        //this.getLocation(this.input)
+        // this.$message({
+        //     message: '查询成功^_^',
+        //     type: 'success',
+        //     offset: 60, // 设置偏移量为 60px 距离顶部的距离
+        //   });
     }
     }
   }
@@ -136,6 +144,10 @@ export default {
 
 </script>
 <style scoped>
+.el-card
+{
+  --el-card-padding:0px;
+}
 .el-col {
   border-radius: 4px;
 }
@@ -145,5 +157,8 @@ export default {
   min-height: 36px;
 }
 
+.one {
+  --el-card-padding: 00px;
+}
 
 </style>

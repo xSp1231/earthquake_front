@@ -4,6 +4,7 @@ import api from "../api";
 
 const store = createStore({
     state: {
+        searchComment:"北京市",  //搜索框搜索内容
         //每一年的地震次数
         provincename:"null",
         numdata: [0, 1, 1, 2, 2, 3, 3, 4, 4, 9],
@@ -48,8 +49,14 @@ const store = createStore({
                 ],
                 "img":"pictures/default.jpg"
             },
+
     },
     mutations: {
+        //将搜索框的内容传给state.searchComment   //全局状态管理
+        setLocation(state, address) {
+            state.searchComment = address;
+            console.log("state.searchComment is ",state.searchComment)
+        },
         getdatabyprovince(state, province) {
             state.provincename=province
             console.log("点击的省份是", province)
@@ -79,8 +86,7 @@ const store = createStore({
         },
 
 
-
-
     },
+
 })
 export default store

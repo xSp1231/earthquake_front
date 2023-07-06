@@ -6,11 +6,17 @@ import App from './App.vue'
 import router from "./router/index.js";
 import store from "./store/index.js";
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
+//引入百度地图组件
+import BaiduMap from "vue-baidu-map-3x";
 
 const app = createApp(App)
+
 app.use(store)
 app.use(router)
 app.use(ElementPlus)
+app.use(BaiduMap,{
+    ak:"3nFnZablPYCPtiKTPWTC7uGCqHGFLBaf"
+})
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
     app.component(key, component)
 }
