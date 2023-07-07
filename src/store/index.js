@@ -49,7 +49,128 @@ const store = createStore({
                 ],
                 "img":"pictures/default.jpg"
             },
+        searchAreaTableData:[
+            {
+                "position": "新疆叶城市",
+                "time": "2013-10-21",
+                "magnitude": 4.5,
+                "tag": "中震"
+            },
+            {
+                "position": "新疆叶城市",
+                "time": "2013-10-24",
+                "magnitude": 2.6,
+                "tag": "小震"
+            },
+            {
+                "position": "新疆叶城市",
+                "time": "2013-10-28",
+                "magnitude": 3.6,
+                "tag": "小震"
+            },
+            {
+                "position": "新疆叶城市",
+                "time": "2013-06-08",
+                "magnitude": 3.5,
+                "tag": "小震"
+            },
+            {
+                "position": "新疆叶城市",
+                "time": "2013-06-09",
+                "magnitude": 4.5,
+                "tag": "中震"
+            },
+            {
+                "position": "新疆叶城市",
+                "time": "2013-10-21",
+                "magnitude": 4.5,
+                "tag": "中震"
+            },
+            {
+                "position": "新疆叶城市",
+                "time": "2013-10-24",
+                "magnitude": 2.6,
+                "tag": "小震"
+            },
+            {
+                "position": "新疆叶城市",
+                "time": "2013-10-28",
+                "magnitude": 3.6,
+                "tag": "小震"
+            },
+            {
+                "position": "新疆叶城市",
+                "time": "2013-06-08",
+                "magnitude": 3.5,
+                "tag": "小震"
+            },
+            {
+                "position": "新疆叶城市",
+                "time": "2013-06-09",
+                "magnitude": 4.5,
+                "tag": "中震"
+            },{
+                "position": "新疆叶城市",
+                "time": "2013-10-21",
+                "magnitude": 4.5,
+                "tag": "中震"
+            },
+            {
+                "position": "新疆叶城市",
+                "time": "2013-10-24",
+                "magnitude": 2.6,
+                "tag": "小震"
+            },
+            {
+                "position": "新疆叶城市",
+                "time": "2013-10-28",
+                "magnitude": 3.6,
+                "tag": "小震"
+            },
+            {
+                "position": "新疆叶城市",
+                "time": "2013-06-08",
+                "magnitude": 3.5,
+                "tag": "小震"
+            },
+            {
+                "position": "新疆叶城市",
+                "time": "2013-06-09",
+                "magnitude": 4.5,
+                "tag": "中震"
+            },{
+                "position": "新疆叶城市",
+                "time": "2013-10-21",
+                "magnitude": 4.5,
+                "tag": "中震"
+            },
+            {
+                "position": "新疆叶城市",
+                "time": "2013-10-24",
+                "magnitude": 2.6,
+                "tag": "小震"
+            },
+            {
+                "position": "新疆叶城市",
+                "time": "2013-10-28",
+                "magnitude": 3.6,
+                "tag": "小震"
+            },
+            {
+                "position": "新疆叶城市",
+                "time": "2013-06-08",
+                "magnitude": 3.5,
+                "tag": "小震"
+            },
+            {
+                "position": "新疆叶城市",
+                "time": "2013-06-09",
+                "magnitude": 4.5,
+                "tag": "中震"
+            }
 
+
+        ]
     },
     mutations: {
         //将搜索框的内容传给state.searchComment   //全局状态管理
@@ -80,6 +201,20 @@ const store = createStore({
                 console.log("获得的地区数据是 is",response.data.areadata)
                 state.provinceintro=response.data.areadata
                 console.log("state数据 ",state.provinceintro)
+            }).catch(error => {
+                console.log(error)
+            })
+        },
+
+        getSearchAreaTableData(state, name) {
+            api.get('getSearchAreaTableData/',{
+                params: {
+                    areaname: name
+                }
+            }).then(response => {
+                console.log("获得的地区数据是 is",response.data.areaTableData)
+                state.searchAreaTableData=response.data.areaTableData
+
             }).catch(error => {
                 console.log(error)
             })

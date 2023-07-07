@@ -41,7 +41,7 @@
         <el-col :xs="6" :sm="6" :md="6" :lg="6" :xl="6">
           <div class="grid-content ep-bg-purple" >
             <el-card class="box-card5" style="width: 100%;height:800px">
-             <h3>地区地震发生历史时间表</h3>
+              <dataTable></dataTable>
             </el-card>
 
           </div>
@@ -61,50 +61,87 @@ import {
   Star,
 } from '@element-plus/icons-vue'
 import bdmap from "./graphOfPage2/areaMap.vue";
+import dataTable from "./graphOfPage2/searchAreaTable.vue";
 import {mapMutations} from "vuex";
 export default {
    components:{
-     bdmap
+     bdmap,
+     dataTable
    },
   data() {
     return {
       options: [
         {
-          value: 'Option1',
-          label: 'Option1',
+          value: '新疆皮山县',
+          label: '新疆皮山县',
         },
         {
-          value: 'Option2',
-          label: 'Option2',
+          value: '新疆阿克陶',
+          label: '新疆阿克陶',
         },
         {
-          value: 'Option3',
-          label: 'Option3',
+          value: '云南盈江',
+          label: '云南盈江',
         },
         {
-          value: 'Option4',
-          label: 'Option4',
+          value: '新疆库车市',
+          label: '新疆库车市',
         },
         {
-          value: 'Option5',
-          label: 'Option5',
+          value: '四川芦山县',
+          label: '四川芦山县',
         },
         {
-          value: 'Option1',
-          label: 'Option1',
+          value: '新疆于田县',
+          label: '新疆于田县',
         },
         {
-          value: 'Option2',
-          label: 'Option2',
+          value: '台湾花莲海域',
+          label: '台湾花莲海域',
         },
         {
-          value: 'Option3',
-          label: 'Option3',
+          value: '新疆叶城市',
+          label: '新疆叶城市',
         },
         {
-          value: 'Option4',
-          label: 'Option4',
-        }
+          value: '西藏改则县',
+          label: '西藏改则县',
+        },
+        {
+          value: '四川长宁',
+          label: '四川长宁',
+        },{
+          value: '青海玛多县',
+          label: '青海玛多县',
+        },{
+          value: '西藏尼玛县',
+          label: '西藏尼玛县',
+        },{
+          value: '云南景谷',
+          label: '云南景谷',
+        },{
+          value: '四川九寨沟',
+          label: '四川九寨沟',
+        },{
+          value: '四川汶川',
+          label: '四川汶川',
+        },{
+          value: '内蒙古准格尔旗',
+          label: '内蒙古准格尔旗',
+        },
+        {
+          value: '山东莱州市',
+          label: '山东莱州市',
+        },
+        {
+          value: '吉林长春市',
+          label: '吉林长春市',
+        },
+        {
+          value: '黑龙江齐齐哈尔',
+          label: '黑龙江齐齐哈尔',
+        },
+
       ],
       input: "",
       Search, //组件也需要返回
@@ -116,7 +153,7 @@ export default {
   },
   methods: {
     ...mapMutations([
-      'setLocation'
+      'setLocation',"getSearchAreaTableData"
     ]),
     find() {
       console.log("input is", this.input)
@@ -124,19 +161,12 @@ export default {
         this.$message({
           message: '输入框未输入数据!',
           type: 'warning',
-          offset: 60, // 设置偏移量为 60px 距离顶部的距离
+          offset: 0, // 设置偏移量为 60px 距离顶部的距离
         });
       }
       else{
+        this.getSearchAreaTableData(this.input)
         this.setLocation(this.input) //之后就可以使用vuex里面的数据
-        // console.log("搜索的地点是",this.input)
-        // console.log("该地点的经纬度是")
-        //this.getLocation(this.input)
-        // this.$message({
-        //     message: '查询成功^_^',
-        //     type: 'success',
-        //     offset: 60, // 设置偏移量为 60px 距离顶部的距离
-        //   });
     }
     }
   }

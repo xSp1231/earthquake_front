@@ -2,7 +2,7 @@
   <div class="map-container">
     <baidu-map
         class="bm-view"
-        :center=address
+        :center=point
         :zoom="10"
         :scroll-wheel-zoom="true"
         :auto-resize="true"
@@ -80,7 +80,6 @@ export default {
         });
       }
     },
-
     // 根据地址名称获取经纬度坐标
     getPointByAddress(address) {
       // 创建地理编码实例
