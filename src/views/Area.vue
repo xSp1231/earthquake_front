@@ -34,7 +34,7 @@
         <el-col :xs="12" :sm="12" :md="12" :lg="12" :xl="12">
           <div class="one" >
             <el-card class="box-card3" style="width: 100%;height:400px;"><bdmap></bdmap> </el-card>
-            <el-card class="box-card4" style="width: 95%;height:400px;margin-top: 20px;margin-left: 20px;"><h3>时间序列预测曲线</h3></el-card>
+            <el-card class="box-card4" style="width: 95%;height:400px;margin-top: 20px;margin-left: 20px;"><prediction-curve></prediction-curve></el-card>
           </div>
         </el-col>
 
@@ -62,11 +62,13 @@ import {
 } from '@element-plus/icons-vue'
 import bdmap from "./graphOfPage2/areaMap.vue";
 import dataTable from "./graphOfPage2/searchAreaTable.vue";
+import predictionCurve from "./graphOfPage2/predictionCurve.vue";
 import {mapMutations} from "vuex";
 export default {
    components:{
      bdmap,
-     dataTable
+     dataTable,
+     predictionCurve
    },
   data() {
     return {
@@ -111,8 +113,8 @@ export default {
           value: '四川长宁',
           label: '四川长宁',
         },{
-          value: '青海玛多县',
-          label: '青海玛多县',
+          value: '玛多',
+          label: '玛多',
         },{
           value: '西藏尼玛县',
           label: '西藏尼玛县',
@@ -153,7 +155,7 @@ export default {
   },
   methods: {
     ...mapMutations([
-      'setLocation',"getSearchAreaTableData"
+      'setLocation',"getSearchAreaTableData","getPredictionData"
     ]),
     find() {
       console.log("input is", this.input)
@@ -167,6 +169,7 @@ export default {
       else{
         this.getSearchAreaTableData(this.input)
         this.setLocation(this.input) //之后就可以使用vuex里面的数据
+        this.getPredictionData(this.input)
     }
     }
   }
