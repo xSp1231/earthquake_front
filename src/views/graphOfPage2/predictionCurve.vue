@@ -1,5 +1,4 @@
 <!--地震预测曲线--->
-
 <template>
   <div  ref="predictionLine" style="width: 100%;height:400px;"></div>
 </template>
@@ -15,7 +14,7 @@ export default {
     }
   },
   computed:{
-    ...mapState(['predictionData']),
+    ...mapState(['predictionData','searchComment']),
       predictData(){
       console.log("地震预测数据",this.predictionData)
       return this.predictionData;
@@ -26,19 +25,19 @@ export default {
       handler(newData, oldData) {//检测数据的变化 数据发生变化 则调用函数
         //每次监听到数据变化 就绘制图表
        console.log("数据在变化=====================",this.predictData)
-        this.draw(this.predictData)
+        this.draw(this.predictData,this.searchComment)
       },
       deep: true // 深度监听
     },
   },
 
   mounted() {
-   this.draw(this.predictData)
+   this.draw(this.predictData,this.searchComment)
     },
   methods:{
-    draw(dataen){
+    draw(dataen,searchName){
       //const dataen=this.predictData;
-      const dateList = dataen.map(function (item) {
+      const dateList = dataen.map(function (item) {        //const  定义常量  定义之后 不能改变
         return item[0];
       });
       const valueList = dataen.map(function (item) {
@@ -50,9 +49,15 @@ export default {
 
         title: [
           {
-            top: '2%',
+            top: '1%',
             left: 'center',
-            text: '基于ARIMA模型的震级时间序列预测曲线'
+            text: '基于ARIMA模型的震级时间序列预测曲线',
+            subtext:"------"+searchName,
+            subtextStyle: {
+              color: '#c91b1b',
+              fontWeight: 'normal',
+              fontSize: 14
+            }
           }
         ],
         tooltip: {
@@ -90,7 +95,7 @@ export default {
         ],
         grid: [
           {
-            top: '10%'
+            top: '15%'
           }
         ],
         series: [
