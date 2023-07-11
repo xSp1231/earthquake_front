@@ -51,7 +51,7 @@ export default {
           {
             top: '1%',
             left: 'center',
-            text: '基于ARIMA模型的震级时间序列预测曲线',
+            text: '基于ARIMA模型的震级时间序列预测曲线123456',
             subtext:"------"+searchName,
             subtextStyle: {
               color: '#c91b1b',
