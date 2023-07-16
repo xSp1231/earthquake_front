@@ -45,6 +45,8 @@ export default {
             fontSize:13
           }
         },
+
+
         grid: {
           left: '3%',
           right: '8%',

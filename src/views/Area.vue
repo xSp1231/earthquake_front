@@ -26,8 +26,8 @@
       <el-row :gutter="15">
         <el-col :xs="6" :sm="6" :md="6" :lg="6" :xl="6">
           <div class="grid-content ep-bg-purple" style="background-color: #fcfcfc;">
-            <el-card class="box-card1" style="width: 100%;height:400px"> </el-card>
-            <el-card class="box-card2" style="width: 100%;height:400px;margin-top: 20px"> </el-card>
+            <el-card class="box-card1" style="width: 100%;height:400px"><double-bar-graph></double-bar-graph></el-card>
+            <el-card class="box-card2" style="width: 100%;height:400px;margin-top: 20px"><double-pie-graph></double-pie-graph> </el-card>
           </div>
         </el-col>
 
@@ -63,12 +63,17 @@ import {
 import bdmap from "./graphOfPage2/areaMap.vue";
 import dataTable from "./graphOfPage2/searchAreaTable.vue";
 import predictionCurve from "./graphOfPage2/predictionCurve.vue";
+import doublePieGraph from "./graphOfPage2/doublePieGraph.vue";
+import doubleBarGraph from "./graphOfPage2/doubleBarGraph.vue";
 import {mapMutations} from "vuex";
+import DoubleBarGraph from "./graphOfPage2/doubleBarGraph.vue";
 export default {
    components:{
+     DoubleBarGraph,
      bdmap,
      dataTable,
-     predictionCurve
+     predictionCurve,
+     doublePieGraph
    },
   data() {
     return {
@@ -155,7 +160,7 @@ export default {
   },
   methods: {
     ...mapMutations([
-      'setLocation',"getSearchAreaTableData","getPredictionData"
+      'setLocation',"getSearchAreaTableData","getPredictionData","getDoubleBarData"
     ]),
     find() {
       console.log("input is", this.input)
@@ -170,6 +175,7 @@ export default {
         this.getSearchAreaTableData(this.input)
         this.setLocation(this.input) //之后就可以使用vuex里面的数据
         this.getPredictionData(this.input)
+        this.getDoubleBarData(this.input) // 得到两个坐标轴的数据
     }
     }
   }

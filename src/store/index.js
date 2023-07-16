@@ -171,9 +171,19 @@ const store = createStore({
             }
 
 
-        ]
+        ],
+        doubleBarMagnitude:[1,2,3],//震级大小数据
+        doubleBarDepth:[30,20,10],//震源深度数据
+        //饼图 图例 + 数据
+        magnitudeLegend:['2tt','ss2','dd3','ff3'],
+        depthLegend:['d10','d20','gf30','g60'],
+        //饼图数据
+        magnitudePieData:[20,10,20,30],
+        depthPieData:[10,12,30,40],
     },
     mutations: {
+
+        //vuex函数中里面有两个参数 第一个 state 第二个为playload 负载 即一个字典 里面装多重数据
         //将搜索框的内容传给state.searchComment   //全局状态管理
         setLocation(state, address) {
             state.searchComment = address;
@@ -206,7 +216,6 @@ const store = createStore({
                 console.log(error)
             })
         },
-
         getSearchAreaTableData(state, name) {
             api.get('getSearchAreaTableData/',{
                 params: {
@@ -232,10 +241,48 @@ const store = createStore({
                 console.log(error)
             })
         },
+        getDoubleBarData(state,name){
+            api.get('getDoubleBarData/',{
+                params: {
+                    areaname: name
+                }
+            }).then(response => {
+                console.log("vuex获得的地区双轴图数据 震级是 is",response.data.magnitudeData)
+                console.log("vuex获得的地区双轴图数据是 震源深度 is",response.data.depthData)
+                state.doubleBarMagnitude=response.data.magnitudeData
+                state.doubleBarDepth=response.data.depthData
+                console.log("状态获得的地区双轴图数据 震级是 is",state.doubleBarMagnitude)
+                console.log("状态获得的地区双轴图数据是 震源深度 is",state.doubleBarDepth)
+            }).catch(error => {
+                console.log(error)
+            })
 
+        },
 
-
-
+        getLegendAndPieData(state,dict){ //传入地区名 以及数据类型
+            console.log("获取到的参数 ",dict)
+            api.get('getPieData/',{
+                params: {
+                    areaname: dict.areaname,
+                    kind:dict.kind,
+                }
+            }).then(response => {
+                console.log(" 饼图数据 is",response.data)
+                if((dict.kind).includes("震级")){ //dict.kind中是否包含"震级"
+                    console.log("震级数据")
+                    state.magnitudeLegend=response.data.legend
+                    state.magnitudePieData=response.data.pieData
+                }
+                else if((dict.kind).includes("震深")){ ////dict.kind中是否包含"震深"
+                    console.log("震深数据")
+                    state.depthLegend=response.data.legend
+                    state.depthPieData=response.data.pieData
+                }
+                console.log("state的数据变化",state.magnitudePieData)
+            }).catch(error => {
+                console.log(error)
+            })
+        }
     },
 
 })

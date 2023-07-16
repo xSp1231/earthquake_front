@@ -32,6 +32,7 @@ export default {
   bottom:0;
 }
 .container{
+  overflow-x: hidden;
   position:relative;
   top: 0;
   left:0;

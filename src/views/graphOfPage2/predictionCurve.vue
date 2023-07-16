@@ -10,7 +10,6 @@ export default {
   name: "predictionCurve",
   data(){
     return{
-
     }
   },
   computed:{
@@ -18,7 +17,10 @@ export default {
       predictData(){
       console.log("地震预测数据",this.predictionData)
       return this.predictionData;
-   }
+   },
+    pie(){
+      return this.predictionData;
+    }
   },
   watch: {
     predictData: {

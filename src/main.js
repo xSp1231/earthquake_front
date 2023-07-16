@@ -10,7 +10,8 @@ import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 import BaiduMap from "vue-baidu-map-3x";
 
 const app = createApp(App)
-
+// 屏蔽控制台警告信息
+app.config.warnHandler = () => null;
 app.use(store)
 app.use(router)
 app.use(ElementPlus)
