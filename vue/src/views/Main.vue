@@ -31,6 +31,14 @@ export default {
   right: 0;
   bottom:0;
 }
+.container{
+  overflow-x: hidden;
+  position:relative;
+  top: 0;
+  left:0;
+  width: 100%;
+  height: 100%;
+}
 .header {
   position: fixed;
   top:0;

@@ -25,93 +25,28 @@ export default {
       activeIndex: 0,
       items: [
         {
-          title: '四川省雅安市芦山县发生里氏7.0级地震',
-          year: '2013.4.20',
+          title: '《舞！舞！舞！》',
+          year: '2001',
           image: '../src/img/01.jpg',
-          description: '四川省雅安市芦山县发生地震，造成196人死亡，11,826人受伤。'
+          description: '你要做一个不动声色的大人了。不准情绪化，不准偷偷想念，不准回头看。去过自己另外的生活。你要听话，不是所有的鱼都会生活在同一片海里。'
         },
         {
-          title: '云南省曲靖市会泽县发生里氏6.5级地震',
-          year: '2014.8.3',
-          image: '../src/img/02.png',
-          description: '中国云南省曲靖市会泽县发生地震，造成617人死亡，3,143人受伤。'
+          title: '《你的孤独，虽败犹荣》',
+          year: '2022',
+          image: '../src/img/02.jpg',
+          description: '如果你停止，就是谷底。如果你还在继续，就是上坡。这是我听过关于人生低谷最好的阐述。'
         },
         {
-          title: '新疆维吾尔自治区昌吉州吉木萨尔县发生里氏5.3级地震',
-          year: '2015.8.12',
-          image: '../src/img/03.jpeg',
-          description: '中国新疆维吾尔自治区昌吉州吉木萨尔县发生地震，造成1人死亡，33人受伤。'
+          title: '《你的孤独，虽败犹荣》',
+          year: '2022',
+          image: '../src/img/03.jpg',
+          description: '如果你停止，就是谷底。如果你还在继续，就是上坡。这是我听过关于人生低谷最好的阐述。'
         },
         {
-          title: '青海省果洛藏族自治州玛沁县发生里氏5.2级地震',
-          year: '2016.12.23',
+          title: '《你的孤独，虽败犹荣》',
+          year: '2022',
           image: '../src/img/04.jpg',
-          description: '青海省果洛藏族自治州玛沁县发生地震，震源深度7千米。地震未造成人员伤亡和房屋损坏。'
-        },
-        {
-          title: '新疆维吾尔自治区喀什地区叶城县发生里氏4.5级地震',
-          year: '2018.2.25',
-          image: '../src/img/05.jpeg',
-          description: '新疆维吾尔自治区喀什地区叶城县发生地震，震源深度9千米。地震未造成人员伤亡和房屋损坏。\n'
-        },
-        {
-          title: '四川省阿坝藏族羌族自治州九寨沟县发生里氏7.0级地震',
-          year: '2017.8.8',
-          image: '../src/img/06.jpeg',
-          description: '中国四川省阿坝藏族羌族自治州九寨沟县发生地震，造成25人死亡，525人受伤。'
-        },
-        {
-          title: '中国四川省凉山彝族自治州布拖县发生里氏6.5级地震',
-          year: '2018.8.8',
-          image: '../src/img/07.jpeg',
-          description: '中国四川省凉山彝族自治州布拖县发生地震，造成13人死亡，220人受伤。'
-        },
-        {
-          title: '四川省阿坝藏族羌族自治州小金县发生里氏6.0级地震',
-          year: '2018.8.19',
-          image: '../src/img/08.jpeg',
-          description: '四川省阿坝藏族羌族自治州小金县发生地震，震源深度14千米。地震造成了13人死亡，175人受伤，部分房屋和基础设施受到不同程度的破坏。'
-        },
-        {
-          title: '台湾花莲县海域发生里氏6.1地震',
-          year: '2019.4.18',
-          image: '../src/img/09.jpg',
-          description: '台湾花莲县海域发生级地震，震源深度约20千米。地震未造成人员伤亡和房屋损坏。'
-        },
-        {
-          title: '中国云南省昭通市永善县发生里氏5.9级地震',
-          year: '2019.4.20日',
-          image: '../src/img/10.jpg',
-          description: '中国云南省昭通市永善县发生地震，造成3人死亡，28人受伤。'
-        },{
-          title: '中国四川省雅安市荥经县发生里氏5.8级地震',
-          year: '2019.6.17',
-          image: '../src/img/11.jpg',
-          description: '中国四川省雅安市荥经县发生地震，未造成人员伤亡和房屋损坏。'
-        },
-        {
-          title: '四川省宜宾市珙县发生里氏6.4级地震',
-          year: '2021.5.21',
-          image: '../src/img/12.jpg',
-          description: '四川省宜宾市珙县发生地震，震源深度约10千米。地震导致3人死亡，88人受伤，部分房屋和道路受损。'
-        },
-        {
-          title: '云南省文山壮族苗族自治州砚山县发生里氏6.1级地震',
-          year: '2021.8.14',
-          image: '../src/img/13.png',
-          description: '云南省文山壮族苗族自治州砚山县发生地震，震源深度约10千米。地震导致3人死亡，88人受伤，部分房屋和道路受损。'
-        },
-        {
-          title: '青海海北州门源县发生里氏6.9级地震',
-          year: '2022.1.8',
-          image: '../src/img/14.png',
-          description: '青海海北州门源县发生的6.9级地震。地震导致9人受伤，部分房屋和道路受损。'
-        },
-        {
-          title: '台湾花莲县发生里氏6.9级地震',
-          year: '2022.9.18',
-          image: '../src/img/15.jpg',
-          description: '台湾花莲县发生级地震,地震导致1人死亡，146人受伤，部分房屋和道路受损。'
+          description: '如果你停止，就是谷底。如果你还在继续，就是上坡。这是我听过关于人生低谷最好的阐述。'
         }
       ]
     };
@@ -132,7 +67,6 @@ export default {
   },
   methods: {
     handleScroll() {
-      console.log("test")
       const itemLength = this.items.length;
       const pos = $(window).scrollTop();
       let max, min;
@@ -191,7 +125,7 @@ export default {
 
 .title {
   color: #fff;
-  font-size: 20px;
+  font-size: 46px;
   font-weight: normal;
   margin: 0;
 }
@@ -210,13 +144,13 @@ export default {
   font-size: 66px;
   margin: -10px 0 0 0;
   transition: 0.4s;
-  padding: 30px 10px;
+  padding: 0 10px;
   box-sizing: border-box;
   color: #fff;
 }
 
 .content-desc {
-  margin: -40px;
+  margin: 0;
   font-size: 15px;
   box-sizing: border-box;
   color: rgba(255, 255, 255, 0.7);
