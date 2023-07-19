@@ -258,7 +258,6 @@ const store = createStore({
             })
 
         },
-
         getLegendAndPieData(state,dict){ //传入地区名 以及数据类型
             console.log("获取到的参数 ",dict)
             api.get('getPieData/',{
