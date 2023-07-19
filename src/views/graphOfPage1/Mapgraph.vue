@@ -41,7 +41,7 @@ export default {
           height: 478,
             emphasis: {
               itemStyle: {
-                areaColor: '#e8e554',
+                areaColor: '#fd94b4',
                 shadowOffsetX: 0,
                 shadowOffsetY: 0,
                 shadowBlur: 20,
@@ -219,9 +219,9 @@ export default {
           inRange: {
 
             color: [
-              "#ffe5db",
-              "#ff9985",
-              "#f57567",
+              "#eafff7",
+              "#afffdf",
+              "#49beb7",
               "#e64546",
               "#b80909",
 
