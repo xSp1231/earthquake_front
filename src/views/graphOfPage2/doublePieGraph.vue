@@ -65,16 +65,16 @@ export default {
             fontSize: 17
           }
         },
-        color:[
-          "#eafff7",
-          "#afffdf",
-          "#49beb7",
-          "#fc345c",
-          "#f12b6b",
-          "#ff467e",
-          "#fd94b4",
-          "#f6c7c7",
-        ],
+        // color:[
+        //   "#eafff7",
+        //   "#afffdf",
+        //   "#49beb7",
+        //   "#fc345c",
+        //   "#f12b6b",
+        //   "#ff467e",
+        //   "#fd94b4",
+        //   "#f6c7c7",
+        // ],
         // legend:[{
         //   type: 'scroll',
         //   itemWidth: 16, // 设置每个图例的宽度

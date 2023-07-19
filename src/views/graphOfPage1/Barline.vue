@@ -95,7 +95,7 @@ export default {
               data: [{ type: 'average', name: 'Avg' }]
             },
             itemStyle: {
-                color: "#fc345c", //改变折线的颜色
+              color: "#0d72a6", //改变折线的颜色
             },
           },
         ]

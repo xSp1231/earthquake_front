@@ -20,7 +20,7 @@
       <div class="statistic-card">
         <el-statistic :value=injurenum>
           <template #title>
-            <div style="display: inline-flex; align-items: center;color: #fd94b4;font-size: 15px">
+            <div style="display: inline-flex; align-items: center;color: #875df3;font-size: 13px">
               地震受伤人数
               <el-tooltip
                   effect="dark"
@@ -51,7 +51,7 @@
       <div class="statistic-card">
         <el-statistic :value=deathnum>
           <template #title>
-            <div style="display: inline-flex; align-items: center;color: #49beb7;font-size: 15px">
+            <div style="display: inline-flex; align-items: center;color: #444444;font-size: 15px">
               地震死亡人数
               <el-tooltip
                   effect="dark"
@@ -71,7 +71,7 @@
       <div class="statistic-card">
         <el-statistic :value=totalnum title="New transactions today">
           <template #title>
-            <div style="display: inline-flex; align-items: center;color:#fc345c;font-size: medium">
+            <div style="display: inline-flex; align-items: center;color:red;font-size: medium">
               地震伤亡人数
             </div>
           </template>
@@ -81,12 +81,12 @@
   </el-row>
   <el-row :gutter="2" style="margin-top: 0px">
     <el-col :span="24">
-        <div class="areaintro" style=" display: flex;width: 100%;height: 128px;border-radius: 6px;color: #49beb7">
+        <div class="areaintro" style=" display: flex;width: 100%;height: 128px;border-radius: 6px;">
 
           <div class="image-container" v-bind:style="{ 'background-image': 'url(' + image_path+ ')' }"  ></div>
 
           <div class="intro">
-            <h6 style="margin-bottom: 0px;margin-top: 0px;color: #6c6b6b;font-size:20px">地区地理简介:</h6>
+            <h6 style="margin-bottom: 0px;margin-top: 0px;color: #6c6b6b;font-size:15px">地区地理简介:</h6>
             <p>{{intro}}</p>
           </div>
 

@@ -41,7 +41,7 @@ export default {
   methods:{
    ...mapMutations(['getLegendAndPieData']),
     drawDoubleBars(mData,dData){
-      const colors = ['#fc345c', '#49beb7', '#ff467e'];
+      const colors = ['#5da7da', 'rgba(105,222,142,0.86)', '#EE6666'];
       this.myChart = echarts.init(this.$refs.doubleBarGraph);
       this.myChart.setOption({
         color: colors,
