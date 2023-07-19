@@ -68,14 +68,14 @@ export default {
           itemHeight: 15,
         },
         color: [
-            "#5c6b98",
-          "rgba(65,138,241,0.34)",
-      "#11a4af",
-      "#9fe1c7",
-      "#cccdd0",
-      "#942020",
-      "rgba(239,129,95,0.8)",
-      "#af8dea",
+            "#eafff7",
+            "#afffdf",
+            "#49beb7",
+            "#fc345c",
+            "#f12b6b",
+            "#ff467e",
+            "#fd94b4",
+            "#f6c7c7",
         ],
         series: [
           {

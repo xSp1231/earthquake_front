@@ -61,7 +61,7 @@ export default {
             end: 200,
             handleSize: '100%',
             handleStyle: {
-              color: '#ce1818',
+              color: '#49beb7',
               shadowBlur: 10,
               shadowColor: 'rgba(77,61,61,0.6)',
               shadowOffsetX: 2,
@@ -121,7 +121,7 @@ export default {
             type: 'bar',
             data:data[3],
             itemStyle: {
-              color: '#e09256' // 设置颜色为蓝色
+              color: '#49beb7' // 设置颜色为蓝色
             },
             markPoint: {
               data: [

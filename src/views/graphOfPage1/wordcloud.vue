@@ -152,11 +152,11 @@
                  color: function() {
                    return (
                        "rgb(" +
-                       Math.round(Math.random() * 160) +
+                       Math.round( 73) +
                        ", " +
-                       Math.round(Math.random() * 160) +
+                       Math.round(190) +
                        ", " +
-                       Math.round(Math.random() * 160) +
+                       Math.round(Math.random() * 183) +
                        ")"
                    );
                  },

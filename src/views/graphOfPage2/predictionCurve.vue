@@ -56,12 +56,13 @@ export default {
             text: '基于ARIMA模型的震级时间序列预测曲线',
             subtext:"------"+searchName,
             subtextStyle: {
-              color: '#c91b1b',
+              color: "#fc345c",
               fontWeight: 'normal',
               fontSize: 14
             }
           }
         ],
+        color:"#49beb7",
         tooltip: {
           trigger: 'axis'
         },
@@ -77,7 +78,7 @@ export default {
             end: 100,
             handleSize: '100%',
             handleStyle: {
-              color: '#e7f0f5',
+              color: '#fc345c',
               shadowBlur: 10,
               shadowColor: 'rgba(77,61,61,0.6)',
               shadowOffsetX: 2,
