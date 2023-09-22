@@ -6,12 +6,12 @@
 <script>
 import * as echarts from "echarts";
 import {mapState} from "vuex";
+import  'echarts/theme/shine'
 
 export default {
   name: "doublePieGraph",
   data(){
     return {
-
     }
   },
   computed:{
@@ -48,7 +48,7 @@ export default {
   },
   methods:{
     drawDoublePie(magnitudePieData,depthPieData){
-      this.myChart = echarts.init(this.$refs.doublePieGraph);
+      this.myChart = echarts.init(this.$refs.doublePieGraph,'shine');
       this.myChart.setOption({
         tooltip:{},
         title: {
@@ -100,6 +100,11 @@ export default {
               position: 'inner',
               fontSize: 11
             },
+            itemStyle: {
+              borderRadius: 3,
+              borderColor: '#fff',
+              borderWidth: 1
+            },
             labelLine: {
               show: false
             },
@@ -108,6 +113,11 @@ export default {
           {
             name: 'magnitude',//震级  //震级大小  点击柱状图的一个地方 显示震级的数量分布 饼图 {震级,数量}
             type: 'pie',
+            itemStyle: {
+              borderRadius: 10,
+              borderColor: '#fff',
+              borderWidth: 2
+            },
             radius: ['40%', '60%'],
             center: ['50%', '55%'], // 调整嵌套饼图的位置
             data:magnitudePieData

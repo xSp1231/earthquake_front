@@ -9,6 +9,8 @@ import china from '../../data/chinamap.json'
 import api from "../../api/index.js";
 import {mapMutations} from "vuex";
 
+import  'echarts/theme/vintage.js'
+
 export default {
   name: "mapgraph",
   props: {},
@@ -20,33 +22,35 @@ export default {
       'getdatabyarea'
     ]),
     drawmap() {
-      this.myChart = echarts.init(this.$refs.mapContainer);
+      this.myChart = echarts.init(this.$refs.mapContainer,);
       echarts.registerMap('china', china);
       this.myChart.setOption({
         title: {
           text: '地震发生次数地区聚类图（2013-2022）',
-          subtext: '数据来源-国家地震数据中心',
+          subtext: '  --数据来源-国家地震数据中心',
+          sublink: 'https://data.earthquake.cn/index.html',
+          subtextStyle:{
+            fontSize:15,
+          }
         },
         tooltip: {
           formatter: function (params) {
-           // console.log("点击的params is ", params.data)
-            return params.data.name + '近十年地震次数统计为:' + '<br>' + params.data.value;
+            return params.data.name + '近十年地震总次数为:' + '<br>' + params.data.value;
           }
         },
         geo: {
-          center: [105.5, 32.5],
+          center: [104, 34.5],
           map: 'china',
           roam: true,
+          zoom:1.3,
           width: 508,
           height: 478,
             emphasis: {
               itemStyle: {
-                areaColor: '#e8e554',
-                shadowOffsetX: 0,
-                shadowOffsetY: 0,
+                areaColor: '#ef606c',
                 shadowBlur: 20,
-                borderWidth: 1,
-                shadowColor: 'rgba(0, 0, 0, 0.5)'
+                borderWidth: 2,
+                shadowColor: 'rgba(231,7,7,0.5)'
               }
             }
         },
@@ -194,23 +198,23 @@ export default {
               },
             ],
           },
-          {
-            type: 'scatter',
-            coordinateSystem: 'geo',
-            data: [
-              {
-                name: '北京', value: [116.46, 39.92, 90], itemStyle: {color: '#F00'}
-              },
-              {
-                name: '上海', value: [121.48, 31.22, 999], itemStyle: {color: '#F00'}
-              },
-              {
-                name: '深圳', value: [114.07, 22.62, 99911], itemStyle: {color: '#F00'}
-              },
-            ],
-            symbol: 'circle',
-            symbolSize: 10,
-          },
+          // {
+          //   type: 'scatter',
+          //   coordinateSystem: 'geo',
+          //   data: [
+          //     {
+          //       name: '北京', value: [116.46, 39.92, 90], itemStyle: {color: '#F00'}
+          //     },
+          //     {
+          //       name: '上海', value: [121.48, 31.22, 999], itemStyle: {color: '#F00'}
+          //     },
+          //     {
+          //       name: '深圳', value: [114.07, 22.62, 99911], itemStyle: {color: '#F00'}
+          //     },
+          //   ],
+          //   symbol: 'circle',
+          //   symbolSize: 10,
+          // },
         ],
         visualMap: {
           left: "right",
@@ -219,24 +223,11 @@ export default {
           inRange: {
 
             color: [
-              "#ffe5db",
-              "#ff9985",
-              "#f57567",
-              "#e64546",
-              "#b80909",
-
-              // "#c9c6c6",
-              // "#86c5b3",
-              // "#e0b37b",
-              // "#A98BB3",
-              // "#7a9f7e",
-
-
-              // "#9edde8",
-              //  "#74cce0",
-              //  "#50b0ef",
-              //  "#2854a1",
-              //  "#0453e5",
+              "rgb(252,228,211)",
+              "rgba(255,153,133,0.87)",
+              "rgba(245,117,103,0.89)",
+              "rgba(230,69,70,0.87)",
+              "rgba(184,9,9,0.9)",
             ],
           },
           text: ["High", "Low"],
@@ -255,6 +246,6 @@ export default {
 <style scoped>
 .graphmap {
   width: 100%;
-  height: 400px;
+  height: 530px;
 }
 </style>

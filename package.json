@@ -18,12 +18,18 @@
     "jquery": "^3.7.0",
     "screenfull": "^6.0.2",
     "vue": "^3.2.47",
+    "vue-append": "^2.2.0",
     "vue-baidu-map-3x": "^1.0.34",
     "vue-router": "^4.2.1",
+    "vue-video-player": "^6.0.0",
+    "vue3-marquee": "^4.0.0",
+    "vue3-video-play": "^1.3.1-beta.6",
     "vuex": "^4.0.2"
   },
   "devDependencies": {
+    "@types/node": "^20.4.5",
     "@vitejs/plugin-vue": "^4.1.0",
+    "lib-flexible": "^0.3.2",
     "unplugin-auto-import": "^0.16.1",
     "vite": "^4.3.2"
   }

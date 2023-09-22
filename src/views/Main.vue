@@ -25,6 +25,9 @@ export default {
 
 <style scoped>
 .common-layout{
+  margin-left: 0.6%;
+  width: 98%;
+  /*overflow-x: hidden;*/
   position: absolute;
   top:0;
   left: 0;

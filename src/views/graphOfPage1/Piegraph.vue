@@ -7,6 +7,8 @@
 import * as echarts from "echarts";
 import {mapState} from "vuex";
 
+import  'echarts/theme/infographic.js'
+
 export default {
   name: "Piegraph",
   data(){
@@ -37,21 +39,19 @@ export default {
 
   methods:{
     drawpie() {
-      this.myChart = echarts.init(this.$refs.pie);
+      this.myChart = echarts.init(this.$refs.pie,"infographic");
       this.myChart.setOption( {
         title: {
           text: '各省份地震次数前八地区(近十年)',
           subtext:this.areaname,
           subtextStyle:{
-            color:'#af1c1c',
-            //字体大小
-            fontSize:15,
-            fontWeight:100
+            color:'#fd0000',
+            fontSize:18,
+            fontWeight:500
           },
           left:"center",
           textStyle:{
             color:'#3d3c3c',
-            //字体大小
             fontSize:16
           }
         },
@@ -61,36 +61,39 @@ export default {
         legend: {
           //设置位置   文字在右，图例在左（图例纵向排列在图表右侧的时候）
           align:'left',
-          x: 330, // 'center' | 'left' | {number},
+          x: 340, // 'center' | 'left' | {number},
           y: 'center', // 'center' | 'bottom' | {number}
           icon: "circle",//图例样式
           orient: 'vertical',
-          itemHeight: 15,
+          itemHeight: 17,
         },
         color: [
-          "#5c6b98",
-          "rgba(65,138,241,0.34)",
+          "#087aab",
+          "rgba(76,122,196,0.34)",
           "#11a4af",
           "#9fe1c7",
           "#cccdd0",
-          "#942020",
+          "#a44040",
           "rgba(239,129,95,0.8)",
-          "#af8dea",
+          "#c45656",
         ],
         series: [
           {
             name: '地区地震次数',
             type: 'pie',
             //radius:'60%',
-            radius: [30,80],
+            radius: [25,80],
             center: ['40%', '50%'],//设置饼图位置
             roseType: 'area',
             data:this.piedata,
+            itemStyle: {
+              borderRadius: 5
+            },
             emphasis: {
               itemStyle: {
                 shadowBlur: 10,
                 shadowOffsetX: 0,
-                shadowColor: 'rgba(0, 0, 0, 0.5)',
+                shadowColor: 'rgba(120,204,213,0.5)',
                 borderRadius: 10,
               }
             }

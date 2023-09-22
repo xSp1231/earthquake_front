@@ -5,6 +5,9 @@
 <script>
 import * as echarts from "echarts";
 import api from "../../api/index.js";
+
+import  'echarts/theme/shine.js'
+
 export default {
   name: "MagnitudeBar",
   data() {
@@ -24,7 +27,7 @@ export default {
       })
     },
     draw(data) {
-      this.myChart = echarts.init(this.$refs.mgraph);
+      this.myChart = echarts.init(this.$refs.mgraph,'shine');
       this.myChart.setOption( {
         title: {
           text: '各地区近十年震级展示',
@@ -115,13 +118,20 @@ export default {
             type: 'value'
           }
         ],
+        grid: {
+          left: '5%',
+          right: '5%',
+          bottom: '8%',
+          top: '13%',
+          containLabel: true
+        },
         series: [
           {
             name: '最高震级', //
             type: 'bar',
             data:data[3],
             itemStyle: {
-              color: '#e09256' // 设置颜色为蓝色
+              color: '#c95321' // 设置颜色为蓝色
             },
             markPoint: {
               data: [

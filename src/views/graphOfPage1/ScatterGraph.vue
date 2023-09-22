@@ -6,6 +6,9 @@
 <script>
 import * as echarts from "echarts";
 import api from "../../api/index.js";
+
+import  'echarts/theme/infographic'
+
 export default {
   name: "ScatterGraph",
   data() {
@@ -14,7 +17,6 @@ export default {
   },
   mounted() {
     this.getScatterData().then(r=>{
-      console.log("r is ",r)
       this.draw(r)
     })
   },
@@ -25,7 +27,7 @@ export default {
       })
     },
     draw(data) {
-      this.myChart = echarts.init(this.$refs.scatterGraph)
+      this.myChart = echarts.init(this.$refs.scatterGraph,'infographic')
       this.myChart.setOption({
 
         title: {
@@ -44,7 +46,7 @@ export default {
           containLabel: true
         },
         tooltip: {
-          trigger: 'axis'
+
         },
         xAxis: {
           scale: true
@@ -59,7 +61,10 @@ export default {
             symbolSize: 6,
             itemStyle: {
               color: function (params) {
-                const colors = ['red', 'blue', 'green'];
+               // const colors = ['red', 'blue', 'green'];
+                const colors = [
+                  '#1ea256', '#da0a1f','#605ca1',
+                  ];
                 return colors[params.data[2]];  // 根据数据的第三个值设置颜色
               }
             },
@@ -67,7 +72,6 @@ export default {
           }],
       })
     },
-
   }
 }
 

@@ -8,7 +8,7 @@
  import * as echarts from 'echarts';
  import 'echarts-wordcloud';
  import {mapMutations} from 'vuex'
-
+ import  'echarts/theme/infographic.js'
  export default {
    name:"wordcloud",
    data() {
@@ -160,15 +160,10 @@
                        ")"
                    );
                  },
-               emphasis: {
-                 shadowBlur: 10,
-                 shadowColor: '#333'
-               }
              },
              top: 5,
              right: 10,
              bottom: 0,
-             //width height ：词云的宽高，默认是 75% 80%。
              width:"100%",
              height:"80%",
              data: this.wordList
@@ -176,6 +171,7 @@
          ],
        })
        this.myChart.on('click', (params) => {
+         console.log("点击词云",params)
          this.getdatabyprovince(params.data.name)
        });
      }
@@ -186,7 +182,7 @@
  <style scoped>
  .wordcloud{
    width:100%;
-   height:260px;
+   height:280px;
    margin:auto;
  }
 </style>

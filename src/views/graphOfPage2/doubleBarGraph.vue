@@ -8,12 +8,12 @@
 import * as echarts from "echarts";
 import {mapState} from "vuex";
 import {mapMutations} from "vuex";
-
+import  'echarts/theme/shine.js'
+import  'echarts/theme/infographic'
 export default {
   name: "doubleBarGraph",
   data(){
     return{
-
     }
   },
   computed:{
@@ -41,8 +41,8 @@ export default {
   methods:{
    ...mapMutations(['getLegendAndPieData']),
     drawDoubleBars(mData,dData){
-      const colors = ['#5da7da', 'rgba(105,222,142,0.86)', '#EE6666'];
-      this.myChart = echarts.init(this.$refs.doubleBarGraph);
+      const colors = ['rgba(36,147,182,0.4)', 'rgb(58,189,139)', 'rgb(58,189,139)'];
+      this.myChart = echarts.init(this.$refs.doubleBarGraph,'infographic');
       this.myChart.setOption({
         color: colors,
         tooltip: {

@@ -1,11 +1,12 @@
 <!--地震预测曲线--->
 <template>
-  <div  ref="predictionLine" style="width: 100%;height:400px;"></div>
+  <div  ref="predictionLine" style="width: 100%;height:400px; "></div>
 </template>
 
 <script>
 import * as echarts from 'echarts';
 import {mapState} from "vuex";
+import  'echarts/theme/infographic'
 export default {
   name: "predictionCurve",
   data(){
@@ -46,7 +47,7 @@ export default {
         return item[1];
       });
 
-      this.myChart = echarts.init(this.$refs.predictionLine);
+      this.myChart = echarts.init(this.$refs.predictionLine,'infographic');
       this.myChart.setOption({
 
         title: [
@@ -54,6 +55,9 @@ export default {
             top: '1%',
             left: 'center',
             text: '基于ARIMA模型的震级时间序列预测曲线',
+            textStyle: {
+              color: '#969393' // 在这里设置标题的颜色
+            },
             subtext:"------"+searchName,
             subtextStyle: {
               color: '#c91b1b',
@@ -77,13 +81,6 @@ export default {
             start: 0,
             end: 100,
             handleSize: '100%',
-            handleStyle: {
-              color: '#e7f0f5',
-              shadowBlur: 10,
-              shadowColor: 'rgba(77,61,61,0.6)',
-              shadowOffsetX: 2,
-              shadowOffsetY: 2
-            }
           }
         ],
         xAxis: [
@@ -103,8 +100,40 @@ export default {
         ],
         series: [
           {
+            smooth: true,
             type: 'line',
-            showSymbol: false,
+            symbol:'circle',
+            symbolSize:5 ,// 设置标记的大小
+            itemStyle: {
+             color: 'rgba(16,112,141,0.9)' ,// 设置圆圈的颜色为红色
+            },
+            lineStyle: {
+              color: 'rgba(16,112,141,0.9)', // 设置曲线的颜色
+            },
+            markArea: {
+              itemStyle: {
+                color: 'rgba(36,147,182,0.4)',
+              },
+              data: [
+                [
+                  {
+                    name: '预测数据-准确率一般',
+                    xAxis: '2021-08-31'
+                  },
+                  {
+                    xAxis: '2022-06-30'
+                  }],[
+                  {
+                    name: '预测数据-准确率较低',
+                    xAxis: '2023-08-31'
+                  },
+                  {
+                    xAxis: '2024-06-30'
+                  }
+                ],
+              ]
+            },
+            showSymbol: true,
             data: valueList,
             xAxisIndex: 0,
             yAxisIndex: 0

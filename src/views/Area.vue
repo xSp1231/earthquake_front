@@ -34,7 +34,7 @@
         <el-col :xs="12" :sm="12" :md="12" :lg="12" :xl="12">
           <div class="one" >
             <el-card class="box-card3" style="width: 100%;height:400px;"><bdmap></bdmap> </el-card>
-            <el-card class="box-card4" style="width: 95%;height:400px;margin-top: 20px;margin-left: 20px;"><prediction-curve></prediction-curve></el-card>
+            <el-card class="box-card4" style="width: 100%;height:400px;margin-top: 20px;"><prediction-curve></prediction-curve></el-card>
           </div>
         </el-col>
 

@@ -20,12 +20,12 @@
       <div class="statistic-card">
         <el-statistic :value=injurenum>
           <template #title>
-            <div style="display: inline-flex; align-items: center;color: #875df3;font-size: 13px">
+            <div style="display: inline-flex; align-items: center;color: #5c2dde;font-size: 15px">
               地震受伤人数
               <el-tooltip
                   effect="dark"
                   content="该省份近十年以来由地震引发的受伤数粗略统计"
-                  placement="top"
+                  placement="right-end"
               >
                 <el-icon style="margin-left: 4px" :size="14">
                   <Warning/>
@@ -34,29 +34,18 @@
             </div>
           </template>
         </el-statistic>
-<!--        <div class="statistic-footer">-->
-<!--          <div class="footer-item">-->
-<!--            <span>than yesterday</span>-->
-<!--            <span class="green">-->
-<!--              24%-->
-<!--              <el-icon>-->
-<!--                <CaretTop/>-->
-<!--              </el-icon>-->
-<!--            </span>-->
-<!--          </div>-->
-<!--        </div>-->
       </div>
     </el-col>
     <el-col :span="8">
       <div class="statistic-card">
         <el-statistic :value=deathnum>
           <template #title>
-            <div style="display: inline-flex; align-items: center;color: #444444;font-size: 15px">
+            <div style="display: inline-flex; align-items: center;color: #101010;font-size: 16px">
               地震死亡人数
               <el-tooltip
                   effect="dark"
                   content="该省份近十年以来由地震引发的死亡数粗略统计"
-                  placement="top"
+                  placement="right-end"
               >
                 <el-icon style="margin-left: 4px" :size="14">
                   <Warning/>
@@ -71,7 +60,7 @@
       <div class="statistic-card">
         <el-statistic :value=totalnum title="New transactions today">
           <template #title>
-            <div style="display: inline-flex; align-items: center;color:red;font-size: medium">
+            <div style="display: inline-flex; align-items: center;color:#ff0000;font-size: 16px">
               地震伤亡人数
             </div>
           </template>
@@ -86,7 +75,7 @@
           <div class="image-container" v-bind:style="{ 'background-image': 'url(' + image_path+ ')' }"  ></div>
 
           <div class="intro">
-            <h6 style="margin-bottom: 0px;margin-top: 0px;color: #6c6b6b;font-size:15px">地区地理简介:</h6>
+            <h6 style="color: #797575;font-size:15px;">地区地理简介:</h6>
             <p>{{intro}}</p>
           </div>
 
@@ -96,18 +85,12 @@
 </template>
 
 <script>
-import {
-  ArrowRight,
-  CaretBottom,
-  CaretTop,
-  Warning,
-} from '@element-plus/icons-vue'
+
 import {mapState} from "vuex";
 export default {
   name: "Broadcast",
   data(){
     return{
-     // image_path:"http://127.0.0.1:8000/media/pictures/default.jpg",
     }
   },
   computed: { //cpmputed也可以实现监听数据  但是为什么要使用watch呢 因为可以在watch里面使用函数
@@ -136,7 +119,7 @@ export default {
 
 
 .image-container{
-  border-radius: 10px;
+  border-radius: 6px;
   width:50%;
   background-size:cover;
   background-position: center;
@@ -145,7 +128,7 @@ export default {
 .intro {
   margin-left: 8px;
   width: 50%;
-  background-color: #e3dddc;
+  background-color: rgba(192, 77, 16, 0.09);
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0px 0px 10px rgba(72, 53, 53, 0.1);

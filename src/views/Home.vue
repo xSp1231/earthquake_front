@@ -3,8 +3,8 @@
     <el-row :gutter="10">
       <el-col :span="18">
         <div class="grid-content1 ep-bg-purple"/>
-        <div class="first" style="display: flex; margin-top: 0px;margin-left: 10px">
-          <div class="broadcast" style="width: 40%;height:530px;">
+        <div class="first" style="display: flex; margin-top: 0;margin-left: 10px">
+          <div class="broadcast" style="width: 40%;height:560px;">
             <el-card style="width: 100%;height: 40%;margin-bottom: 9px" shadow="always">
               <broadcast></broadcast>
             </el-card>
@@ -13,7 +13,7 @@
               <piegraph></piegraph>
             </el-card>
           </div>
-          <div class="graph" style="width: 60%;height:500px; margin-left: 20px; ">
+          <div class="graph" style="width: 60%;height:570px; margin-left: 20px; ">
             <el-card style="width: 100%;height: 100%" shadow="always">
               <mapgraph></mapgraph>
             </el-card>

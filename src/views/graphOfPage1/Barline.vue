@@ -6,6 +6,7 @@
 import * as echarts from 'echarts';
 import {mapState} from "vuex";
 
+import  'echarts/theme/infographic'
 export default {
   data(){
     return{
@@ -36,7 +37,7 @@ export default {
   },
   methods: {
     draw() {
-      this.myChart = echarts.init(this.$refs.barline);
+      this.myChart = echarts.init(this.$refs.barline,'infographic');
       this.myChart.setOption({
         title: {
           text: this.name+'近十年地震次数变化',
@@ -45,8 +46,6 @@ export default {
             fontSize:13
           }
         },
-
-
         grid: {
           left: '3%',
           right: '8%',
