@@ -36,7 +36,6 @@ export default {
       deep: true // 深度监听
     },
   },
-
   methods:{
     drawpie() {
       this.myChart = echarts.init(this.$refs.pie,"infographic");
